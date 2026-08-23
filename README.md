@@ -89,4 +89,4 @@ If a torrent stalls (no peers, stuck progress), hit **Remove** on its card. This
 
 ## License
 
-Add a license of your choice — MIT is a common pick for small personal tools like this.
+MIT — see [LICENSE](LICENSE) for details.
