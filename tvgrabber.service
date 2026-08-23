@@ -1,0 +1,13 @@
+[Unit]
+Description=TV Grabber
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/tvgrabber
+ExecStart=/usr/bin/python3 /home/ubuntu/tvgrabber/app.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
