@@ -16,15 +16,15 @@ import json
 app = Flask(__name__)
 
 # ── Config ────────────────────────────────────────────────────────────────────
-QB_URL        = "http://localhost:8080"
-QB_USER       = "ubuntu"
-QB_PASS       = "ubuntu"
-DOWNLOADS_DIR = "/home/ubuntu/bison/Torrents"
-TV_DIR        = "/home/ubuntu/bison/TVShows"
+QB_URL        = os.environ.get("QB_URL", "http://localhost:8080")
+QB_USER       = os.environ.get("QB_USER", "")
+QB_PASS       = os.environ.get("QB_PASS", "")
+DOWNLOADS_DIR = os.environ.get("DOWNLOADS_DIR", "/path/to/Torrents")
+TV_DIR        = os.environ.get("TV_DIR", "/path/to/TVShows")
 POLL_INTERVAL = 20   # seconds between progress checks
 # ─────────────────────────────────────────────────────────────────────────────
 
-JOBS_FILE = "/home/ubuntu/tvgrabber/active_jobs.json"
+JOBS_FILE = os.environ.get("JOBS_FILE", os.path.join(os.path.dirname(os.path.abspath(__file__)), "active_jobs.json"))
 jobs = {}   # in-memory job store  { job_id: {...} }
 
 
